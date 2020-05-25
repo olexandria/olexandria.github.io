@@ -13,7 +13,7 @@ function myFunction() {
 var mybutton = document.getElementById("myBtn");
 mybutton.className = "w3-hide";
 function scrollFunction() {
-  if (document.body.scrollTop > 1 || document.documentElement.scrollTop > 1) {
+  if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
     mybutton.className = "w3-show";
   } else {
     mybutton.className = "w3-hide";
@@ -26,7 +26,7 @@ function topFunction() {
 }
 // Used to toggle the menu on small screens when clicking on the menu button
 function toggleFunction() {
-    var x = document.getElementById("navDemo");
+    var x = document.getElementById("nav");
     if (x.className.indexOf("w3-show") == -1) {
         x.className += " w3-show";
     } else {
@@ -51,4 +51,86 @@ function showSlides() {
   slides[slideIndex-1].style.display = "block";  
   dots[slideIndex-1].className += " active";
   setTimeout(showSlides, 3000); 
+}
+// Used to show additional information
+function Information() {
+  var x = document.getElementById("myDIV");
+  if (x.style.display === "block") {
+    x.style.display = "none";
+  } else {
+    x.style.display = "block";
+  }
+}
+function Details() {
+  var x = document.getElementById("myDIV_small");
+  if (x.style.display === "block") {
+    x.style.display = "none";
+  } else {
+    x.style.display = "block";
+  }
+}
+// Used to search 
+function Search_genre() {
+    var input, filter, ul, li, a, i, txtValue;
+    input = document.getElementById("myInput_genre");
+    filter = input.value.toUpperCase();
+    ul = document.getElementById("Genre");
+    li = ul.getElementsByTagName("li");
+    for (i = 0; i < li.length; i++) {
+        a = li[i].getElementsByTagName("a")[0];
+        txtValue = a.textContent || a.innerText;
+        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+            li[i].style.display = "";
+        } else {
+            li[i].style.display = "none";
+        }
+    }
+}
+function Search_author() {
+    var input, filter, ul, li, a, i, txtValue;
+    input = document.getElementById("myInput_author");
+    filter = input.value.toUpperCase();
+    ul = document.getElementById("Author");
+    li = ul.getElementsByTagName("li");
+    for (i = 0; i < li.length; i++) {
+        a = li[i].getElementsByTagName("a")[0];
+        txtValue = a.textContent || a.innerText;
+        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+            li[i].style.display = "";
+        } else {
+            li[i].style.display = "none";
+        }
+    }
+}
+function Search_genre_small() {
+    var input, filter, ul, li, a, i, txtValue;
+    input = document.getElementById("myInput_genre_small");
+    filter = input.value.toUpperCase();
+    ul = document.getElementById("Genre_small");
+    li = ul.getElementsByTagName("li");
+    for (i = 0; i < li.length; i++) {
+        a = li[i].getElementsByTagName("a")[0];
+        txtValue = a.textContent || a.innerText;
+        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+            li[i].style.display = "";
+        } else {
+            li[i].style.display = "none";
+        }
+    }
+}
+function Search_author_small() {
+    var input, filter, ul, li, a, i, txtValue;
+    input = document.getElementById("myInput_author_small");
+    filter = input.value.toUpperCase();
+    ul = document.getElementById("Author_small");
+    li = ul.getElementsByTagName("li");
+    for (i = 0; i < li.length; i++) {
+        a = li[i].getElementsByTagName("a")[0];
+        txtValue = a.textContent || a.innerText;
+        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+            li[i].style.display = "";
+        } else {
+            li[i].style.display = "none";
+        }
+    }
 }
